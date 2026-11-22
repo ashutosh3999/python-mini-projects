@@ -9,6 +9,10 @@ def judge_leap_year(year):
     else:
         return False
 
+def addition(year):
+    add = year + 10
+    return add
+
 
 # returns the number of days in each month
 def month_days(month, leap_year):
@@ -24,6 +28,7 @@ def month_days(month, leap_year):
 
 name = input("input your name: ")
 age = input("input your age: ")
+add = addition(int(age))
 localtime = time.localtime(time.time())
 
 year = int(age)
@@ -45,5 +50,5 @@ for m in range(1, localtime.tm_mon):
     day = day + month_days(m, leap_year)
 
 day = day + localtime.tm_mday
-print("%s's age is %d years or " % (name, year), end="")
+print("%s's age is %d years or %d years" % (name, year, add), end="")
 print("%d months or %d days" % (month, day))
